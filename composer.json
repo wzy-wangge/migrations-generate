@@ -1,5 +1,5 @@
 {
-	"name": "kitloong/laravel-migrations-generator",
+	"name": "wzy/migrations-generate",
 	"description": "Generates Laravel Migrations from an existing database",
 	"keywords": ["laravel", "migration", "generator", "migrations", "artisan"],
 	"license": "MIT",
