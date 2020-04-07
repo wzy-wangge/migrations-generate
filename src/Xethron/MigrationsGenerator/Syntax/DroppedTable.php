@@ -16,6 +16,12 @@ class DroppedTable
      */
     public function drop(string $tableName, string $connection): string
     {
+        if (substr($tableName, 0,strlen(DB::connection($connection)->getTablePrefix()))
+            == DB::connection($connection)->getTablePrefix())
+        {
+            $tableName = substr($tableName, 0,strlen(DB::connection($connection)->getTablePrefix()));
+        }
+        
         if ($connection !== Config::get('database.default')) {
             $connectionMethod = 'connection(\''.$connection.'\')->';
         }
